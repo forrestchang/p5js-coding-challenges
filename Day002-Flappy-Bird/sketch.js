@@ -9,22 +9,27 @@ function setup() {
 
 function draw() {
   background(0);
+
+  for (var i = pipes.length - 1; i >= 0; i--) {
+    pipes[i].update();
+    pipes[i].show();
+
+    if (pipes[i].hits(bird)) {
+      console.log('Hit');
+      pipes[i].changeColor();
+    }
+
+    if (pipes[i].offscreen()) {
+      pipes.splice(i, 1);
+    }
+
+  }
+
   bird.update();
   bird.show();
 
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
-  }
-
-  for (var i = 0; i < pipes.length; i++) {
-    pipes[i].update();
-    pipes[i].show();
-  }
-
-  for (var i = 0; i < pipes.length; i++) {
-    if (pipes[i].x < 0) {
-      pipes.slice(i);
-    }
   }
 }
 
