@@ -9,8 +9,8 @@ function setup() {
 }
 
 function draw() {
-  // speed = map(mouseX, 0, width, 0, 50);
-  speed = map(Math.abs(pos), -600, 600, 0, 50);
+  speed = map(mouseX, 0, width, 0, 50);
+  // speed = map(Math.abs(pos), -600, 600, 0, 50);
   if (speed > 50) {
     speed = 50;
   }
