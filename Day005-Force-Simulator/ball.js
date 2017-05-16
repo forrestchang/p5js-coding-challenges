@@ -16,8 +16,9 @@ function Ball(m, x, y) {
   };
 
   this.show = function() {
-    noStroke();
-    fill(255);
+    stroke(124);
+    strokeWeight(4);
+    fill(200);
     ellipse(this.position.x, this.position.y, this.mass, this.mass);
   };
 
@@ -27,6 +28,7 @@ function Ball(m, x, y) {
       this.position.y = height - this.mass;
     } else if (this.position.y - this.mass < 0) {
       this.velocity.y *= -0.9;
+      this.position.y = this.mass;
     }
 
     if (this.position.x + this.mass > width) {
