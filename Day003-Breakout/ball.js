@@ -9,17 +9,17 @@ function Ball() {
   this.show = function() {
     fill(29, 176, 205);
     rect(this.x, this.y, this.width, this.width);
-  }
+  };
 
   this.update = function() {
     this.x += this.xspeed;
     this.y += this.yspeed;
-  }
+  };
 
   this.reset = function() {
     this.x = width / 2 - this.width;
     this.y = height - height / 4;
-  }
+  };
 
   this.edges = function() {
     if (this.y < 0) {
@@ -31,7 +31,7 @@ function Ball() {
     if (this.y + this.width > height) {
       this.reset();
     }
-  }
+  };
 
   this.hits = function(block) {
     // y 轴方向碰撞
@@ -45,5 +45,5 @@ function Ball() {
     // x 轴方向碰撞
 
     return false;
-  }
+  };
 }
